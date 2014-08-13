@@ -12,8 +12,9 @@ http://haskell98.blogspot.ru/2014/08/blog-post_8.html
 
 ### для компьютера с конфигурацией pc1.conf
 
-| User        | Lang   | Avg. time | Max memory | SLOC |
-|-------------|--------|-----------|------------|------|
-| duburlan    | PHP    | 107s      | 4687MB     | 170  |
-| egobrain    | Erlang | 24s       | 32MB       | 47   |
-| maxim-komar | C      | 0.6s      | 24MB       | 129  |
+| User        | Lang    | Avg. time | Max memory | SLOC  |
+|-------------|---------|-----------|------------|-------|
+| duburlan    | PHP     | 107s      | 4687MB     | 170   |
+| egobrain    | Erlang  | 24s       | 32MB       | 47    |
+| maxim-komar | C       | 0.6s      | 24MB       | 129   |
+| botoxny     | Clojure | 204s      | 2378MB     | 23+51 |

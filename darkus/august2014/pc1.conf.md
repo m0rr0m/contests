@@ -71,3 +71,7 @@
 ## Scala
 
     Scala compiler version 2.11.1-20140519-000000-1e1defd99c -- Copyright 2002-2013, LAMP/EPFL
+
+### Clojure
+
+    Version 1.5.1

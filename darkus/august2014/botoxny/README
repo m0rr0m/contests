@@ -5,3 +5,14 @@ http://haskell98.blogspot.ru/2014/08/blog-post_11.html
 http://haskell98.blogspot.ru/2014/08/blog-post_12.html
 
 $ lein run FILE
+
+## Результаты вызова на машине с конфигурацией pc1.conf
+
+    ➜  time lein run ../bigmatrix > /dev/null 
+    lein run ../bigmatrix > /dev/null  283,80s user 3,02s system 139% cpu 3:25,29 total
+    ➜ time lein run ../bigmatrix > /dev/null
+    lein run ../bigmatrix > /dev/null  283,56s user 3,17s system 138% cpu 3:26,34 total
+    ➜ time lein run ../bigmatrix > /dev/null
+    lein run ../bigmatrix > /dev/null  263,42s user 3,08s system 132% cpu 3:21,31 total
+
+    Максимальная потребляемая память около 2.322GB =~ 2378MB
