@@ -7,13 +7,15 @@
 
 # Примеры запуска
 
-## На моем рабочем компьютере (gcc 4.7.3, Intel Core i3-4130):
+## На компьютере с конфигурацией pc1.conf
     ➜ time ./august ../bigmatrix 6001 4001 > /dev/null 
     ./august ../bigmatrix 6001 4001 > /dev/null  0,59s user 0,01s system 99% cpu 0,605 total
     ➜ time ./august ../bigmatrix 6001 4001 > /dev/null
     ./august ../bigmatrix 6001 4001 > /dev/null  0,60s user 0,00s system 98% cpu 0,607 total
     ➜ time ./august ../bigmatrix 6001 4001 > /dev/null
     ./august ../bigmatrix 6001 4001 > /dev/null  0,59s user 0,01s system 98% cpu 0,609 total
+
+    Потребление памяти около 24MB
 
 ## Минимальный инстанс digitalocean (512MB):
     ➜  time ./august ../bigmatrix 6001 4001 > /dev/null                                                     
