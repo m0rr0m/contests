@@ -75,3 +75,7 @@
 ### Clojure
 
     Version 1.5.1
+
+### SBCL
+
+    SBCL 1.1.18
