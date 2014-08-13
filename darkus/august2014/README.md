@@ -19,4 +19,4 @@ http://haskell98.blogspot.ru/2014/08/blog-post_8.html
 | maxim-komar | C       | 0.6s      | 24MB       | 129   |
 | botoxny     | Clojure | 204s      | 2378MB     | 23+51 |
 | swizard0    | Lisp    | 105s      | 93MB       | 121   |
-
+| nigredo     | Scala   | ?         | ?          | 104   |
