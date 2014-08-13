@@ -58,3 +58,13 @@
 ## Erlang
     
     Erlang/OTP 17 [erts-6.1] [source] [64-bit] [smp:4:4] [async-threads:10] [hipe] [kernel-poll:false]
+
+## GCC
+
+    COLLECT_GCC=/usr/x86_64-pc-linux-gnu/gcc-bin/4.7.3/gcc
+    COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-pc-linux-gnu/4.7.3/lto-wrapper
+    Целевая архитектура: x86_64-pc-linux-gnu
+    Параметры конфигурации: /var/tmp/portage/sys-devel/gcc-4.7.3-r1/work/gcc-4.7.3/configure --host=x86_64-pc-linux-gnu --build=x86_64-pc-linux-gnu --prefix=/usr --bindir=/usr/x86_64-pc-linux-gnu/gcc-bin/4.7.3 --includedir=/usr/lib/gcc/x86_64-pc-linux-gnu/4.7.3/include --datadir=/usr/share/gcc-data/x86_64-pc-linux-gnu/4.7.3 --mandir=/usr/share/gcc-data/x86_64-pc-linux-gnu/4.7.3/man --infodir=/usr/share/gcc-data/x86_64-pc-linux-gnu/4.7.3/info --with-gxx-include-dir=/usr/lib/gcc/x86_64-pc-linux-gnu/4.7.3/include/g++-v4 --with-python-dir=/share/gcc-data/x86_64-pc-linux-gnu/4.7.3/python --enable-languages=c,c++,fortran --enable-obsolete --enable-secureplt --disable-werror --with-system-zlib --enable-nls --without-included-gettext --enable-checking=release --with-bugurl=https://bugs.gentoo.org/ --with-pkgversion='Gentoo 4.7.3-r1 p1.4, pie-0.5.5' --enable-libstdcxx-time --enable-shared --enable-threads=posix --enable-__cxa_atexit --enable-clocale=gnu --enable-multilib --with-multilib-list=m32,m64 --disable-altivec --disable-fixed-point --enable-targets=all --disable-libgcj --enable-libgomp --disable-libmudflap --disable-libssp --enable-lto --without-cloog --without-ppl
+    Модель многопоточности: posix
+    gcc версия 4.7.3 (Gentoo 4.7.3-r1 p1.4, pie-0.5.5) 
+
