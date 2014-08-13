@@ -54,3 +54,7 @@
     Zend Engine v2.5.0, Copyright (c) 1998-2014 Zend Technologies
         with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 
+
+## Erlang
+    
+    Erlang/OTP 17 [erts-6.1] [source] [64-bit] [smp:4:4] [async-threads:10] [hipe] [kernel-poll:false]
