@@ -19,4 +19,4 @@
     ➜ time ./pochta-rossii.erl ../bigmatrix > /dev/null 
     ./pochta-rossii.erl ../bigmatrix > /dev/null  24,73s user 1,18s system 105% cpu 24,475 total
 
-    Потребляемая память около 32KB
+    Потребляемая память около 32MB
