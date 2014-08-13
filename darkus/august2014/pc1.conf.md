@@ -68,3 +68,6 @@
     Модель многопоточности: posix
     gcc версия 4.7.3 (Gentoo 4.7.3-r1 p1.4, pie-0.5.5) 
 
+## Scala
+
+    Scala compiler version 2.11.1-20140519-000000-1e1defd99c -- Copyright 2002-2013, LAMP/EPFL
