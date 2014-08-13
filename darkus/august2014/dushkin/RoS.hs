@@ -10,17 +10,9 @@
    
    
                                                                               -}
-{------------------------------------------------------------------------------}
-
-module RoS
-(
-  -- * Функции
-  main
-)
-where
-
 {-[ СЕКЦИЯ ИМПОРТА ]-----------------------------------------------------------}
 
+import System.Environment
 import Control.Arrow ((&&&))
 import Control.Monad (liftM)
 
@@ -136,8 +128,8 @@ prettyPrint = mapM_ prettyPrint'
 
 -- | Главная функция модуля. Запускает программу на исполнение.
 main :: IO ()
-main = do putStr "Введите имя файла с матрицей: "
-          fn <- getLine
+main = do 
+          [fn] <- getArgs
           m  <- loadMatrix fn
           prettyPrint $ zip [0..9] $ map (\i -> findSymbol (symbol i) m) [0..9]
 
