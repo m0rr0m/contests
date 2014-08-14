@@ -1,6 +1,6 @@
 (ns fpsf-1408.core
   (:gen-class)
-  (:require [clojure.string :refer [split-lines]]
+  (:require [clojure.string :as str]
             [criterium.core :as criterium]
             [fpsf-1408.data :as data]))
 
@@ -17,18 +17,23 @@
     (for [i is j js]
       [i j (block matrix i j width height)])))
 
-(defn solve [matrix char->repr]
+(defn solve [char->repr matrix]
   (keep (fn [[i j b]]
           (some (fn [[char repr]]
                   (when (= b repr) [i j char]))
                 char->repr))
         (blocks matrix 3 5)))
 
-(defn ->matrix [x]
-  (->> x slurp split-lines (mapv vec)))
+(defn -solve [in]
+  (->> in
+    slurp
+    str/split-lines
+    (mapv vec)
+    (solve data/char->repr)))
 
-(defn -main [x]
-  (let [matrix (->matrix x)]
-    (criterium/bench (dorun (solve matrix data/char->repr)))
-    #_(doseq [[i j c] (solve matrix data/char->repr)]
-        (println c \@ i j))))
+(defn bench [in]
+  (criterium/bench (dorun (-solve in))))
+
+(defn -main [in]
+  (doseq [[i j char] (-solve in)]
+    (println char \@ i j)))
