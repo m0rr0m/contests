@@ -23,5 +23,5 @@
 
 (defn -main [& args]
   (let [matrix (->> args first slurp split-lines (mapv vec))]
-    (doseq [[i j c] (-> (solve matrix data/charz) doall time)]
+    (doseq [[i j c] (solve matrix data/charz)]
       (println c \@ i j))))

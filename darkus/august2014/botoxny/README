@@ -5,3 +5,15 @@ http://haskell98.blogspot.ru/2014/08/blog-post_11.html
 http://haskell98.blogspot.ru/2014/08/blog-post_12.html
 
 $ lein run FILE
+
+$ time lein run ../bigmatrix > result 
+
+real    4m26.114s
+user    6m0.904s
+sys     0m12.281s
+
+$ time lein trampoline run ../bigmatrix > result 
+
+real    3m53.013s
+user    4m0.831s
+sys     0m3.657s
