@@ -1,6 +1,7 @@
 (ns fpsf-1408.core
-  (:require [clojure.core.reducers :as r] 
-            [clojure.string :refer [split-lines]]
+  (:gen-class)
+  (:require [clojure.string :refer [split-lines]]
+            [criterium.core :as criterium]
             [fpsf-1408.data :as data]))
 
 (defn block [matrix i j width height]
@@ -27,5 +28,7 @@
   (->> x slurp split-lines (mapv vec)))
 
 (defn -main [x]
-    (doseq [[i j c] (solve (->matrix x) data/char->repr)]
-      (println c \@ i j)))
+  (let [matrix (->matrix x)]
+    (criterium/bench (dorun (solve matrix data/char->repr)))
+    #_(doseq [[i j c] (solve matrix data/char->repr)]
+        (println c \@ i j))))
