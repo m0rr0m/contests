@@ -20,4 +20,4 @@ http://haskell98.blogspot.ru/2014/08/blog-post_8.html
 | botoxny     | Clojure | 204s      | 2378MB     | 23+51 |
 | swizard0    | Lisp    | 105s      | 93MB       | 121   |
 | nigredo     | Scala   | -         | -          | 104   |
-| dushkin     | Haskell | ?         | 1697MB     | 116   |
+| dushkin     | Haskell | 38190s    | 1697MB     | 116   |
