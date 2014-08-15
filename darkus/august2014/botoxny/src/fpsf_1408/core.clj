@@ -1,6 +1,6 @@
 (ns fpsf-1408.core
   (:gen-class)
-  (:require [clojure.string :as str]
+  (:require [clojure.java.io :as io]
             [criterium.core :as criterium]
             [fpsf-1408.data :as data]))
 
@@ -24,12 +24,15 @@
                 char->repr))
         (blocks matrix 3 5)))
 
+(defn ->matrix [in]
+  (with-open [reader (io/reader in)]
+    (->> reader
+      line-seq
+      (map vec)
+      (into []))))
+
 (defn -solve [in]
-  (->> in
-    slurp
-    str/split-lines
-    (mapv vec)
-    (solve data/char->repr)))
+  (solve data/char->repr (->matrix in)))
 
 (defn bench [in]
   (criterium/bench (dorun (-solve in))))
