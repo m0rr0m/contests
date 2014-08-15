@@ -1,12 +1,12 @@
-http://haskell98.blogspot.ru/2014/08/blog-post_8.html
+## Run & print:
 
-http://haskell98.blogspot.ru/2014/08/blog-post_11.html
+    $ lein run IN
 
-http://haskell98.blogspot.ru/2014/08/blog-post_12.html
+## Run & bench:
+    
+    $ lein run -m fpsf-1408.core/bench IN
 
-$ lein run FILE
-
-## Результаты вызова на машине с конфигурацией pc1.conf
+## Результаты вызова на машине с конфигурацией pc1.conf (до внесения изменений)
 
     ➜  time lein run ../bigmatrix > /dev/null 
     lein run ../bigmatrix > /dev/null  283,80s user 3,02s system 139% cpu 3:25,29 total
