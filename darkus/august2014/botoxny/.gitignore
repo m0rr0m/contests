@@ -1,0 +1,6 @@
+.settings/
+bin/
+target/
+.classpath
+.lein-repl-history
+.project
