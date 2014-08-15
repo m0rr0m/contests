@@ -6,13 +6,13 @@
     
     $ lein run -m fpsf-1408.core/bench IN
 
-## Результаты вызова на машине с конфигурацией pc1.conf (до внесения изменений)
+## Результаты вызова на машине с конфигурацией pc1.conf
 
-    ➜  time lein run ../bigmatrix > /dev/null 
-    lein run ../bigmatrix > /dev/null  283,80s user 3,02s system 139% cpu 3:25,29 total
+    ➜ time lein run ../bigmatrix > /dev/null                                                        
+    lein run ../bigmatrix > /dev/null  261,55s user 3,12s system 135% cpu 3:15,03 total
     ➜ time lein run ../bigmatrix > /dev/null
-    lein run ../bigmatrix > /dev/null  283,56s user 3,17s system 138% cpu 3:26,34 total
+    lein run ../bigmatrix > /dev/null  276,31s user 2,89s system 141% cpu 3:17,94 total
     ➜ time lein run ../bigmatrix > /dev/null
-    lein run ../bigmatrix > /dev/null  263,42s user 3,08s system 132% cpu 3:21,31 total
+    lein run ../bigmatrix > /dev/null  253,84s user 3,14s system 134% cpu 3:10,81 total
 
-    Максимальная потребляемая память около 2.322GB =~ 2378MB
+    Максимальная потребляемая память около 1.522GB =~ 1558MB
