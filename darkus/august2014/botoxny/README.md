@@ -1,5 +1,4 @@
 Run & print:
-$ lein trampoline run IN
-
-~~Run & bench:
-$ lein run -m fpsf-1408.core/bench IN~~
+```
+lein trampoline run IN
+```
