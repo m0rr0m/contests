@@ -27,6 +27,16 @@
     ➜  time ./august ../bigmatrix 6001 4001 > /dev/null 
     real  0m3.901s user  0m3.648s sys 0m0.132s
 
+## Решение на машине с конфигурацией pc1.conf
+
+    ➜ time ./silentfl ../bigmatrix 6001 4001 > /dev/null
+    ./silentfl ../bigmatrix 6001 4001 > /dev/null  0,38s user 0,00s system 98% cpu 0,385 total
+    ➜ time ./silentfl ../bigmatrix 6001 4001 > /dev/null
+    ./silentfl ../bigmatrix 6001 4001 > /dev/null  0,38s user 0,00s system 98% cpu 0,385 total
+    ➜ time ./silentfl ../bigmatrix 6001 4001 > /dev/null
+    ./silentfl ../bigmatrix 6001 4001 > /dev/null  0,37s user 0,01s system 98% cpu 0,385 total
+
+
 # Пояснения
 
 ## Пояснение к алгоритму

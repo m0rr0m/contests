@@ -21,3 +21,5 @@ http://haskell98.blogspot.ru/2014/08/blog-post_8.html
 | swizard0    | Lisp    | 105s      | 93MB       | 121   |
 | nigredo     | Scala   | -         | -          | 104   |
 | dushkin     | Haskell | 38190s    | 1697MB     | 116   |
+| -           | -       | -         | -          | -     |
+| silentfl    | C       | 0.385s    | <1MB       | 46    |
