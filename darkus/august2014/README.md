@@ -23,4 +23,4 @@ http://haskell98.blogspot.ru/2014/08/blog-post_8.html
 | dushkin     | Haskell | 38190s    | 1697MB     | 116   |
 | -           | -       | -         | -          | -     |
 | silentfl    | C       | 0.385s    | <1MB       | 46    |
-| silentfl    | Go      | 4.9s      | 100MB      | -     | 
+| silentfl    | Go      | 4.9s      | 100MB      | 131   | 
