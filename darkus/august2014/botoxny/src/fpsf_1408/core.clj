@@ -1,6 +1,7 @@
 (ns fpsf-1408.core
   (:gen-class)
-  (:require [clojure.string :as str]
+  (:require [clojure.core.reducers :as r]
+            [clojure.java.io :as io]
             [criterium.core :as criterium]
             [fpsf-1408.data :as data]))
 
@@ -9,31 +10,41 @@
     (for [i (range i i-end)]
       (-> i matrix (subvec j j-end)))))
 
-(defn blocks [matrix width height]
+(defn blocks [width height matrix]
   (let [m (count matrix)
-        n (-> matrix first count)
+        n (-> 0 matrix count)
         is (->> height dec (- m) range)
         js (->> width dec (- n) range)]
-    (for [i is j js]
-      [i j (block matrix i j width height)])))
+    (r/mapcat (fn [i]
+                (r/map (fn [j]
+                         [i j (block matrix i j width height)])
+                       js))
+            is)))
 
 (defn solve [char->repr matrix]
-  (keep (fn [[i j b]]
-          (some (fn [[char repr]]
-                  (when (= b repr) [i j char]))
-                char->repr))
-        (blocks matrix 3 5)))
+  (let [valz (vals char->repr)
+        reprs (set valz)
+        repr->char (zipmap valz (keys char->repr))]
+    (->> matrix
+      (blocks 3 5)
+      (r/filter (fn [[_ _ b]]
+                  (reprs b)))
+      (r/map (fn [[i j b]]
+               [i j (repr->char b)]))
+      r/foldcat))) ; TODO: fold lazily
+
+(defn ->matrix [in]
+  (with-open [reader (io/reader in)]
+    (->> reader
+      line-seq
+      (mapv vec))))
 
 (defn -solve [in]
-  (->> in
-    slurp
-    str/split-lines
-    (mapv vec)
-    (solve data/char->repr)))
+  (solve data/char->repr (->matrix in)))
 
-(defn bench [in]
-  (criterium/bench (dorun (-solve in))))
+#_(defn bench [in]
+    (criterium/bench (dorun (-solve in))))
 
 (defn -main [in]
-  (doseq [[i j char] (-solve in)]
-    (println char \@ i j)))
+  (doseq [[i j c] (-solve in)]
+    (println c \@ i j)))
