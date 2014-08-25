@@ -10,17 +10,17 @@
     gcc -Ofast -march=native -m64 -funroll-loops -o silentfl main.c
 
 # Запуск и проверка результата:
-    ./silentfl ../bigmatrix 6001 4001 | perl -ne '/Digit (\d)/; print $1; END { print "\n" }' > result
-    diff result ../pi1000000.txt
+    ./silentfl ../../bigmatrix 6001 4001 | perl -ne '/Digit (\d)/; print $1; END { print "\n" }' > result
+    diff result ../../pi1000000.txt
 
 # Примеры запуска
 
 ## Мое решение (простая компиляция)
-    ➜  time ./silentfl ../bigmatrix 6001 4001 > /dev/null
+    ➜  time ./silentfl ../../bigmatrix 6001 4001 > /dev/null
     real  0m1.730s user  0m1.620s sys 0m0.092s
     
 ## Мое решение (продвинутая компиляция x86)
-    ➜  time ./silentfl ../bigmatrix 6001 4001 > /dev/null
+    ➜  time ./silentfl ../../bigmatrix 6001 4001 > /dev/null
     real  0m1.501s user  0m1.420s sys 0m0.064s
 
 ## Решение maxim-komar (для сравнения)
