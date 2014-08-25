@@ -6,7 +6,15 @@
 
 ## Запуск на машине с конфигурацией pc1.conf
 
-Not tested yet.
+    ➜ time ./august ../bigmatrix > /dev/null                                        
+    ./august ../bigmatrix > /dev/null  886,14s user 0,55s system 99% cpu 14:47,50 total
+    ➜ time ./august ../bigmatrix > /dev/null
+    ./august ../bigmatrix > /dev/null  883,27s user 0,51s system 99% cpu 14:44,59 total
+    ➜ time ./august ../bigmatrix > /dev/null
+    ./august ../bigmatrix > /dev/null  892,58s user 0,50s system 99% cpu 14:53,90 total
+
+    Максимальное потребление памяти 1.941GB =~ 1988MB
+
 
 ## Описание алгоритма
 

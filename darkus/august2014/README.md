@@ -24,3 +24,4 @@ http://haskell98.blogspot.ru/2014/08/blog-post_8.html
 | -           | -       | -         | -          | -     |
 | silentfl    | C       | 0.385s    | <1MB       | 46    |
 | silentfl    | Go      | 4.9s      | 100MB      | 131   | 
+| vonavi      | Haskell | 888s      | 1988MB     | -     |
