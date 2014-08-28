@@ -1,4 +1,4 @@
-#!/usr/bin/env escript -n
+#!/usr/bin/escript -n
 % parameter -n for native compiling
 %
 % made by Silent
