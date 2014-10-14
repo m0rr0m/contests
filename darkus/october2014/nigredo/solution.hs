@@ -1,5 +1,4 @@
 import Data.List (intercalate, intersperse)
-import qualified Data.HashSet as HS
 
 data Quarter = 
           LeftTop 
@@ -57,7 +56,7 @@ keys n =
         ps = points n
         -- Не поворачиваем первую точку, отсекая варианты с поворотами.
         cs = map (LeftTop:) (combinations $ tail ps) in
-    filter (isValidKey n) $ map (zipWith (turn n) ps) cs
+    map (zipWith (turn n) ps) cs
 
 printKey :: Key -> String
 printKey = intercalate ", " . map show
@@ -74,26 +73,3 @@ getKeyLines n key =
 
 prettyPrintKey :: Int -> Key -> String
 prettyPrintKey n = intercalate "\n" . getKeyLines n
-
-isValidKey :: Int -> Key -> Bool
-isValidKey n key =
-    let start = paperCells n key
-        states = iterate stepFill (HS.singleton (head (HS.toList start)), start) in
-    HS.null $ snd $ head $ filter (HS.null . fst) states
-
-paperCells :: Int -> [Point] -> HS.HashSet Point
-paperCells n key =
-    let keyHS = HS.fromList key
-        fullHS = HS.fromList $ cartesianWith (,) [0..n-1] [0..n-1] in
-    HS.difference fullHS keyHS
-
-stepFill :: (HS.HashSet Point, HS.HashSet Point) -> (HS.HashSet Point, HS.HashSet Point)
-stepFill (activeCells, unfilledCells) =
-    let newUC = unfilledCells `HS.difference` activeCells
-        neighbours :: Point -> HS.HashSet Point
-        neighbours (x, y) = 
-            HS.fromList [(x - 1, y), (x + 1, y), (x, y + 1), (x, y - 1)]
-        acNeighbours = 
-            HS.foldr (\cell -> \acc -> acc `HS.union` (neighbours cell)) HS.empty activeCells
-        newAC = acNeighbours `HS.intersection` newUC in
-    (newAC, newUC)
