@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 use strict;
-require '/tmp/common.pl';
+require '../common.pl';
 # O _ _ _ 
 # _ _ _ _ 
 # _ _ O O 
