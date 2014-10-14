@@ -1,22 +1,15 @@
--module(prog).
--export([main/0]).
+#!/usr/bin/env escript
+%% -*- erlang -*-
+%%! -smp enable -sname solution
 
-main() ->
-	
-	
-	{ok, [Num]} = io:fread("Prompt> ","~d"),
-	
-
+main([String]) ->
+	Num = list_to_integer(String),
 	printAllMatrix(Num).
 
 
 printAllMatrix(N) ->
-	io:write(N),
-	io:format("~n~n"),
-
 	Size = round(N/2),
 	StartSequence = createList(Size*Size),
-	
 
 	iterateSequence(StartSequence, Size).
 
