@@ -7,4 +7,4 @@ run:
 	time ./Solution $N > /dev/null
 
 check:
-	./Solution | ./n.pl
+	./Solution $N | ./n.pl > result
