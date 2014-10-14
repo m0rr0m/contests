@@ -55,15 +55,14 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    int n = atoi(argv[1]);
+    int n = atoi(argv[1]) / 2;
 
     bigint count = 1;
     count <<= 2 * (n*n - 1);
 
-    printf("Number of variants: %lli\n", count);
+    // printf("Number of variants: %lli\n", count);
 
     for (bigint x = 0; x < count; x++) {
-        putchar('\n');
         for (int i = 0; i < 2*n; ++i) {
             for (int j = 0; j < 2*n; ++j) {
                 putchar(is_a_hole(n, i, j, x) ? 'O' : '_');
@@ -71,6 +70,7 @@ int main(int argc, char *argv[]) {
             }
             putchar('\n');
         }
+        putchar('\n');
     }
 
     return 0;
