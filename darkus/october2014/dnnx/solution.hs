@@ -16,9 +16,9 @@ get (Board n bits) i j =
   in
     case (i >= halfN, j >= halfN) of
       (False, False) -> code (i * halfN + j) == 0
-      (False,  True) -> code ((j - halfN) * halfN + (halfN - i - 1)) == 1
+      (False,  True) -> code ((n - j - 1) * halfN + i) == 1
       ( True,  True) -> code ((n - i - 1) * halfN + (n - j - 1)) == 2
-      ( True, False) -> code ((halfN - j - 1) * halfN + i - halfN) == 3
+      ( True, False) -> code (j * halfN + (n - i - 1)) == 3
 
 isGood :: Board -> Bool
 isGood board@(Board n _) =
