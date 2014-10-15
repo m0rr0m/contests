@@ -53,6 +53,6 @@ main :: IO ()
 main = do
   args <- getArgs
   let n = read $ head args
-  let brds = P.filter connected $ P.filter isGood $ boards n
+  let brds = boards n
   CM.forM_ brds print
   -- print $ P.length brds
