@@ -21,13 +21,13 @@ foreach my $dir (@dir){
 }
 
 my @table = (['N', @n, 'status']);
-push(@table, ['-', map { '--' } (@n, 1)]);
+push(@table, [map { '-----' } (1, @n, 1)]);
 foreach my $dir (@dir){
     my @res = map { $h{$dir}{$_} } @n;
     push(@table, [$dir, @res, $h{$dir}{status}]);
 }
 
-print (join "\n", map { '|' . (join '|', @$_) . '|' } @table);
+print (join "\n", map { '| ' . (join ' | ', @$_) . ' |' } @table);
 
 sub extract_time {
     my ($user, $n) = @_;
