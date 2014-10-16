@@ -1,9 +1,9 @@
-#! python3
+#!/usr/bin/env python3
 #WARNING! Wrote under windows. Not tested on linux.
 #dict - matrix storage
 d={}
-N=int(input('N?'))
-print(N)
+N=int(input(''))
+#print(N)
 if N<=0:
 	exit()
 if N%2!=0:
@@ -61,4 +61,4 @@ for m in qq:
 		und_cnt+=1
 		prettyp(m)
 #Output Matrix uniq config counter value
-p(und_cnt)
+#p(und_cnt)
