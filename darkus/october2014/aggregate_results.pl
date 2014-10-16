@@ -1,5 +1,6 @@
 #!/usr/bin/perl -w
 use strict;
+use File::Compare;
 
 my $root = '.';
 
@@ -15,14 +16,15 @@ my %h;
 foreach my $dir (@dir){
     foreach my $n (@n){
         $h{$dir}{$n} = extract_time($dir, $n);
+        $h{$dir}{'status'} = (compare("result$n", "$dir/result$n") == 0) ? 'OK' : 'FAILED'; 
     }
 }
 
-my @table = (['N', @n]);
-push(@table, ['-', map { '--' } @n]);
+my @table = (['N', @n, 'status']);
+push(@table, ['-', map { '--' } (@n, 1)]);
 foreach my $dir (@dir){
     my @res = map { $h{$dir}{$_} } @n;
-    push(@table, [$dir, @res]);
+    push(@table, [$dir, @res, $h{$dir}{status}]);
 }
 
 print (join "\n", map { '|' . (join '|', @$_) . '|' } @table);
